@@ -2,6 +2,7 @@
 #include <vector>
 #include <queue>
 #include <stack>
+#include <algorithm>
 
 using namespace std;
 
@@ -166,13 +167,16 @@ int main()
 		node *init = new node;
 		init->cur = eight_puzzle;
 		
-		//Z_Pos(verPos, horPos, init->cur);
 
 		node *current = init;
 
 		
 		UCS.push(init);
+		vector<vector<vector<int>>> traversed;
+		traversed.push_back(current->cur);
 		
+
+
 		while (current->cur != goal)
 		{
 			current = UCS.front();
@@ -184,13 +188,21 @@ int main()
 				node *right = new node;
 				right->prev = current;
 				right->cur = mv_right(verPos, horPos, current->cur);
-				UCS.push(right);
+				if (find(traversed.begin(), traversed.end(), right->cur) == traversed.end())
+				{
+					UCS.push(right);
+					traversed.push_back(right->cur);
+				}
 
 
 				node *down = new node;
 				down->prev = current;
 				down->cur = mv_down(verPos, horPos, current->cur);
-				UCS.push(down);
+				if (find(traversed.begin(), traversed.end(), down->cur) == traversed.end())
+				{
+					UCS.push(down);
+					traversed.push_back(down->cur);
+				}
 			}
 
 			else if (verPos == 0 && horPos == 1)
@@ -198,19 +210,31 @@ int main()
 				node *left = new node;
 				left->prev = current;
 				left->cur = mv_left(verPos, horPos, current->cur);
-				UCS.push(left);
+				if (find(traversed.begin(), traversed.end(), left->cur) == traversed.end())
+				{
+					UCS.push(left);
+					traversed.push_back(left->cur);
+				}
 
 
 				node *right = new node;
 				right->prev = current;
 				right->cur = mv_right(verPos, horPos, current->cur);
-				UCS.push(right);
+				if (find(traversed.begin(), traversed.end(), right->cur) == traversed.end())
+				{
+					UCS.push(right);
+					traversed.push_back(right->cur);
+				}
 
 
 				node *down = new node;
 				down->prev = current;
 				down->cur = mv_down(verPos, horPos, current->cur);
-				UCS.push(down);
+				if (find(traversed.begin(), traversed.end(), down->cur) == traversed.end())
+				{
+					UCS.push(down);
+					traversed.push_back(down->cur);
+				}
 			}
 
 			else if (verPos == 0 && horPos == 2)
@@ -218,13 +242,21 @@ int main()
 				node *left = new node;
 				left->prev = current;
 				left->cur = mv_left(verPos, horPos, current->cur);
-				UCS.push(left);
+				if (find(traversed.begin(), traversed.end(), left->cur) == traversed.end())
+				{
+					UCS.push(left);
+					traversed.push_back(left->cur);
+				}
 
 
 				node *down = new node;
 				down->prev = current;
 				down->cur = mv_down(verPos, horPos, current->cur);
-				UCS.push(down);
+				if (find(traversed.begin(), traversed.end(), down->cur) == traversed.end())
+				{
+					UCS.push(down);
+					traversed.push_back(down->cur);
+				}
 			}
 
 			else if (verPos == 1 && horPos == 0)
@@ -232,19 +264,31 @@ int main()
 				node *up = new node;
 				up->prev = current;
 				up->cur = mv_up(verPos, horPos, current->cur);
-				UCS.push(up);
+				if (find(traversed.begin(), traversed.end(), up->cur) == traversed.end())
+				{
+					UCS.push(up);
+					traversed.push_back(up->cur);
+				}
 
 
 				node *right = new node;
 				right->prev = current;
 				right->cur = mv_right(verPos, horPos, current->cur);
-				UCS.push(right);
+				if (find(traversed.begin(), traversed.end(), right->cur) == traversed.end())
+				{
+					UCS.push(right);
+					traversed.push_back(right->cur);
+				}
 
 
 				node *down = new node;
 				down->prev = current;
 				down->cur = mv_down(verPos, horPos, current->cur);
-				UCS.push(down);
+				if (find(traversed.begin(), traversed.end(), down->cur) == traversed.end())
+				{
+					UCS.push(down);
+					traversed.push_back(down->cur);
+				}
 			}
 
 			else if (verPos == 1 && horPos == 1)
@@ -252,45 +296,73 @@ int main()
 				node *up = new node;
 				up->prev = current;
 				up->cur = mv_up(verPos, horPos, current->cur);
-				UCS.push(up);
+				if (find(traversed.begin(), traversed.end(), up->cur) == traversed.end())
+				{
+					UCS.push(up);
+					traversed.push_back(up->cur);
+				}
 
 
 				node *right = new node;
 				right->prev = current;
 				right->cur = mv_right(verPos, horPos, current->cur);
-				UCS.push(right);
+				if (find(traversed.begin(), traversed.end(), right->cur) == traversed.end())
+				{
+					UCS.push(right);
+					traversed.push_back(right->cur);
+				}
 
 
 				node *down = new node;
 				down->prev = current;
 				down->cur = mv_down(verPos, horPos, current->cur);
-				UCS.push(down);
+				if (find(traversed.begin(), traversed.end(), down->cur) == traversed.end())
+				{
+					UCS.push(down);
+					traversed.push_back(down->cur);
+				}
 
 
 				node *left = new node;
 				left->prev = current;
 				left->cur = mv_left(verPos, horPos, current->cur);
-				UCS.push(left);
+				if (find(traversed.begin(), traversed.end(), left->cur) == traversed.end())
+				{
+					UCS.push(left);
+					traversed.push_back(left->cur);
+				}
 			}
 			
 			else if (verPos == 1 && horPos == 2)
 			{
+				node *down = new node;
+				down->prev = current;
+				down->cur = mv_down(verPos, horPos, current->cur);
+				if (find(traversed.begin(), traversed.end(), down->cur) == traversed.end())
+				{
+					UCS.push(down);
+					traversed.push_back(down->cur);
+				}
+
+
 				node *up = new node;
 				up->prev = current;
 				up->cur = mv_up(verPos, horPos, current->cur);
-				UCS.push(up);
+				if (find(traversed.begin(), traversed.end(), up->cur) == traversed.end())
+				{
+					UCS.push(up);
+					traversed.push_back(up->cur);
+				}
 
 
 				node *left = new node;
 				left->prev = current;
 				left->cur = mv_left(verPos, horPos, current->cur);
-				UCS.push(left);
-
-
-				node *down = new node;
-				down->prev = current;
-				down->cur = mv_down(verPos, horPos, current->cur);
-				UCS.push(down);
+				if (find(traversed.begin(), traversed.end(), left->cur) == traversed.end())
+				{
+					UCS.push(left);
+					traversed.push_back(left->cur);
+				}
 			}
 
 			else if (verPos == 2 && horPos == 0)
@@ -298,33 +370,54 @@ int main()
 				node *up = new node;
 				up->prev = current;
 				up->cur = mv_up(verPos, horPos, current->cur);
-				UCS.push(up);
+				if (find(traversed.begin(), traversed.end(), up->cur) == traversed.end())
+				{
+					UCS.push(up);
+					traversed.push_back(up->cur);
+				}
 
 
 				node *right = new node;
 				right->prev = current;
 				right->cur = mv_right(verPos, horPos, current->cur);
-				UCS.push(right);
+				if (find(traversed.begin(), traversed.end(), right->cur) == traversed.end())
+				{
+					UCS.push(right);
+					traversed.push_back(right->cur);
+				}
 			}
 
 			else if (verPos == 2 && horPos == 1)
 			{
-				node *left = new node;
-				left->prev = current;
-				left->cur = mv_left(verPos, horPos, current->cur);
-				UCS.push(left);
-
 
 				node *up = new node;
 				up->prev = current;
 				up->cur = mv_up(verPos, horPos, current->cur);
-				UCS.push(up);
+				if (find(traversed.begin(), traversed.end(), up->cur) == traversed.end())
+				{
+					UCS.push(up);
+					traversed.push_back(up->cur);
+				}
+
+
+				node *left = new node;
+				left->prev = current;
+				left->cur = mv_left(verPos, horPos, current->cur);
+				if (find(traversed.begin(), traversed.end(), left->cur) == traversed.end())
+				{
+					UCS.push(left);
+					traversed.push_back(left->cur);
+				}
 
 
 				node *right = new node;
 				right->prev = current;
 				right->cur = mv_right(verPos, horPos, current->cur);
-				UCS.push(right);
+				if (find(traversed.begin(), traversed.end(), right->cur) == traversed.end())
+				{
+					UCS.push(right);
+					traversed.push_back(right->cur);
+				}
 			}
 
 			else if (verPos == 2 && horPos == 2)
@@ -332,13 +425,21 @@ int main()
 				node *left = new node;
 				left->prev = current;
 				left->cur = mv_left(verPos, horPos, current->cur);
-				UCS.push(left);
+				if (find(traversed.begin(), traversed.end(), left->cur) == traversed.end())
+				{
+					UCS.push(left);
+					traversed.push_back(left->cur);
+				}
 
 
 				node *up = new node;
 				up->prev = current;
 				up->cur = mv_up(verPos, horPos, current->cur);
-				UCS.push(up);
+				if (find(traversed.begin(), traversed.end(), up->cur) == traversed.end())
+				{
+					UCS.push(up);
+					traversed.push_back(up->cur);
+				}
 			}
 		}
 		
