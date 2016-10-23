@@ -58,8 +58,9 @@ vector<vector<int>>mv_right(int verPos, int horPos, vector<vector<int>> cur)
 	return up;
 }
 
-//-------------------------MOVEMENT + CHECK-------------------------//
+//-------------------------MOVEMENT + CHECK 0-------------------------//
 
+//counts misplaced tiles
 int misplaced(vector<vector<int>> current)
 {
 	int misplaced = 0;
@@ -102,6 +103,8 @@ int misplaced(vector<vector<int>> current)
 	return misplaced;
 }
 
+
+//counts Manhattan distance of all tiles
 int Manhattan(vector<vector<int>> current)
 {
 	int Manhattan = 0;
@@ -314,7 +317,7 @@ int Manhattan(vector<vector<int>> current)
 
 int main()
 {
-	int verPos;
+	int verPos;//for determining X/Y of Zero
 	int horPos;
 	int choice;
 
@@ -402,11 +405,11 @@ int main()
 
 	struct node
 	{
-		int g = 0;
-		int h = 0;;
-		node *next = NULL;
-		node *prev = NULL;
-		vector<vector<int>> cur;
+		int g = 0;//depth
+		int h = 0;//depends on what method is used
+		node *next = NULL;//ended up not using this
+		node *prev = NULL;//track previous nodes for solution
+		vector<vector<int>> cur;//current state of puzzle
 	};
 
 
@@ -415,10 +418,10 @@ int main()
 	if (choice == 1)
 	{
 		node *given = new node;
-		given->cur = eight_puzzle;
+		given->cur = eight_puzzle;//stores the give puzzle state
 
-		queue <node*> UCS;
-		node *init = new node;
+		queue <node*> UCS;//used to store all braches
+		node *init = new node;//starting node
 		init->cur = eight_puzzle;
 		
 
@@ -426,18 +429,18 @@ int main()
 
 		
 		UCS.push(init);
-		vector<vector<vector<int>>> traversed;
+		vector<vector<vector<int>>> traversed;//used to store previously traversed states
 		traversed.push_back(current->cur);
 		
 
-
+		//performs the UCS search (BFS).
 		while (current->cur != goal)
 		{
-			current = UCS.front();
-			Z_Pos(verPos, horPos, current->cur);
-			UCS.pop();
+			current = UCS.front();//start from first node
+			Z_Pos(verPos, horPos, current->cur);//determine where 0 is
+			UCS.pop();//start unqueueing
 
-			if (verPos == 0 && horPos == 0)
+			if (verPos == 0 && horPos == 0)//checks all possible movements, requeue and repeat
 			{
 				node *right = new node;
 				right->prev = current;
@@ -787,7 +790,7 @@ int main()
 			
 			Z_Pos(verPos, horPos, current->cur);
 
-
+			//exactly the same as UCS but now we use misplaced tiles as a weight
 			if (verPos == 0 && horPos == 0)
 			{
 				node *right = new node;
@@ -1256,7 +1259,7 @@ int main()
 
 			Z_Pos(verPos, horPos, current->cur);
 
-
+			//exactly the same as A* w/ misplaced, but now we use Manhattan distance as weight
 			if (verPos == 0 && horPos == 0)
 			{
 				node *right = new node;
