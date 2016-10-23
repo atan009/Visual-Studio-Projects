@@ -67,35 +67,249 @@ int misplaced(vector<vector<int>> current)
 	{
 		misplaced += 1;
 	}
-	if (current.at(0).at(0) != 2)
+	if (current.at(0).at(1) != 2)
 	{
 		misplaced += 1;
 	}
-	if (current.at(0).at(0) != 3)
+	if (current.at(0).at(2) != 3)
 	{
 		misplaced += 1;
 	}
-	if (current.at(0).at(0) != 4)
+	if (current.at(1).at(0) != 4)
 	{
 		misplaced += 1;
 	}
-	if (current.at(0).at(0) != 5)
+	if (current.at(1).at(1) != 5)
 	{
 		misplaced += 1;
 	}
-	if (current.at(0).at(0) != 6)
+	if (current.at(1).at(2) != 6)
 	{
 		misplaced += 1;
 	}
-	if (current.at(0).at(0) != 7)
+	if (current.at(2).at(0) != 7)
 	{
 		misplaced += 1;
 	}
-	if (current.at(0).at(0) != 8)
+	if (current.at(2).at(1) != 8)
+	{
+		misplaced += 1;
+	}
+	if (current.at(2).at(2) != 0)
 	{
 		misplaced += 1;
 	}
 	return misplaced;
+}
+
+int Manhattan(vector<vector<int>> current)
+{
+	int Manhattan = 0;
+
+	if (current.at(0).at(0) == 1)
+	{
+		Manhattan += 0;
+	}
+
+	else if (current.at(0).at(0) == 2 || current.at(0).at(0) == 4)
+	{
+		Manhattan += 1;
+	}
+
+	else if (current.at(0).at(0) == 3 || current.at(0).at(0) == 7 || current.at(0).at(0) == 5)
+	{
+		Manhattan += 2;
+	}
+
+	else if (current.at(0).at(0) == 6 || current.at(0).at(0) == 8)
+	{
+		Manhattan += 3;
+	}
+
+	else if (current.at(0).at(0) == 0)
+	{
+		Manhattan += 4;
+	}
+
+
+	if (current.at(0).at(1) == 2)
+	{
+		Manhattan += 0;
+	}
+
+	else if (current.at(0).at(1) == 1 || current.at(0).at(1) == 3 || current.at(0).at(1) == 5)
+	{
+		Manhattan += 1;
+	}
+
+	else if (current.at(0).at(1) == 4 || current.at(0).at(1) == 6 || current.at(0).at(1) == 8)
+	{
+		Manhattan += 2;
+	}
+
+	else if (current.at(0).at(1) == 7 || current.at(0).at(1) == 0)
+	{
+		Manhattan += 3;
+	}
+
+
+	if (current.at(0).at(2) == 3)
+	{
+		Manhattan += 0;
+	}
+
+	else if (current.at(0).at(2) == 2 || current.at(0).at(2) == 6)
+	{
+		Manhattan += 1;
+	}
+
+	else if (current.at(0).at(2) == 1 || current.at(0).at(2) == 5 || current.at(0).at(2) == 0)
+	{
+		Manhattan += 2;
+	}
+
+	else if (current.at(0).at(2) == 4 || current.at(0).at(2) == 8)
+	{
+		Manhattan += 3;
+	}
+
+	else if (current.at(0).at(2) == 7)
+	{
+		Manhattan += 4;
+	}
+
+
+	if (current.at(1).at(0) == 4)
+	{
+		Manhattan += 0;
+	}
+
+	else if (current.at(1).at(0) == 1 || current.at(1).at(0) == 5 || current.at(1).at(0) == 7)
+	{
+		Manhattan += 1;
+	}
+
+	else if (current.at(1).at(0) == 2 || current.at(1).at(0) == 6 || current.at(1).at(0) == 8)
+	{
+		Manhattan += 2;
+	}
+
+	else if (current.at(1).at(0) == 3 || current.at(1).at(0) == 0)
+	{
+		Manhattan += 3;
+	}
+
+	
+	if (current.at(1).at(1) == 5)
+	{
+		Manhattan += 0;
+	}
+
+	else if (current.at(1).at(1) == 2 || current.at(1).at(1) == 4 || current.at(1).at(1) == 6 || current.at(1).at(1) == 8)
+	{
+		Manhattan += 1;
+	}
+
+	else if (current.at(1).at(1) == 1 || current.at(1).at(1) == 3 || current.at(1).at(1) == 7 || current.at(1).at(1) == 0)
+	{
+		Manhattan += 2;
+	}
+
+	
+	if (current.at(1).at(2) == 6)
+	{
+		Manhattan += 0;
+	}
+
+	else if (current.at(1).at(2) == 5 || current.at(1).at(2) == 3 || current.at(1).at(2) == 0)
+	{
+		Manhattan += 1;
+	}
+
+	else if (current.at(1).at(2) == 2 || current.at(1).at(2) == 4 || current.at(1).at(2) == 8)
+	{
+		Manhattan += 2;
+	}
+
+	else if (current.at(1).at(2) == 1 || current.at(1).at(2) == 7)
+	{
+		Manhattan += 3;
+	}
+
+	
+	if (current.at(2).at(0) == 7)
+	{
+		Manhattan += 0;
+	}
+
+	else if (current.at(2).at(0) == 4 || current.at(2).at(0) == 8)
+	{
+		Manhattan += 1;
+	}
+
+	else if (current.at(2).at(0) == 1 || current.at(2).at(0) == 5 || current.at(2).at(0) == 0)
+	{
+		Manhattan += 2;
+	}
+
+	else if (current.at(2).at(0) == 2 || current.at(2).at(0) == 6)
+	{
+		Manhattan += 3;
+	}
+
+	else if (current.at(2).at(0) == 3)
+	{
+		Manhattan += 4;
+	}
+
+
+	if (current.at(2).at(1) == 8)
+	{
+		Manhattan += 0;
+	}
+
+	else if (current.at(2).at(1) == 7 || current.at(2).at(1) == 5 || current.at(2).at(1) == 0)
+	{
+		Manhattan += 1;
+	}
+
+	else if (current.at(2).at(1) == 2 || current.at(2).at(1) == 4 || current.at(2).at(1) == 6)
+	{
+		Manhattan += 2;
+	}
+
+	else if (current.at(2).at(1) == 1 || current.at(2).at(1) == 3)
+	{
+		Manhattan += 3;
+	}
+
+	if (current.at(2).at(2) == 0)
+	{
+		Manhattan += 0;
+	}
+
+	else if (current.at(2).at(2) == 8 || current.at(2).at(2) == 6)
+	{
+		Manhattan += 1;
+	}
+
+	else if (current.at(2).at(2) == 3 || current.at(2).at(2) == 5 || current.at(2).at(2) == 7)
+	{
+		Manhattan += 2;
+	}
+
+	else if (current.at(2).at(2) == 2 || current.at(2).at(2) == 4)
+	{
+		Manhattan += 3;
+	}
+
+	else if (current.at(2).at(2) == 1)
+	{
+		Manhattan += 4;
+	}
+
+	return Manhattan;
+
 }
 
 int main()
@@ -483,6 +697,8 @@ int main()
 			}
 		}
 
+		cout << "expanding state " << endl; //Starts to display
+
 		for (int i = 0; i < 3; i++)
 		{
 			for (int k = 0; k < 3; k++)
@@ -508,6 +724,15 @@ int main()
 			display->cur = solution.top();
 			solution.pop();
 
+			if (display->cur != goal)
+			{
+				cout << "Expanding this node" << endl;
+			}
+			else
+			{
+				cout << "Goal!" << endl;
+			}
+
 			for (int i = 0; i < 3; i++)
 			{
 				for (int k = 0; k < 3; k++)
@@ -517,8 +742,11 @@ int main()
 				cout << endl;
 			}
 			cout << endl;
+
+			
 		}
 
+		cout << "# of nodes traversed: " << traversed.size() << endl;
 	}
 
 	//-------------------------Uniform Cost Search-------------------------//
@@ -556,61 +784,7 @@ int main()
 				}
 			}
 
-			/*
-			if (!a_misplaced.at(0).empty())
-			{
-				current = a_misplaced.at(0).front();
-				a_misplaced.at(0).pop();
-			}
-
-			else if (!a_misplaced.at(1).empty())
-			{
-				current = a_misplaced.at(1).front();
-				a_misplaced.at(1).pop();
-			}
-
-			else if (!a_misplaced.at(2).empty())
-			{
-				current = a_misplaced.at(2).front();
-				a_misplaced.at(2).pop();
-			}
-
-			else if (!a_misplaced.at(3).empty())
-			{
-				current = a_misplaced.at(3).front();
-				a_misplaced.at(3).pop();
-			}
-
-			else if (!a_misplaced.at(4).empty())
-			{
-				current = a_misplaced.at(4).front();
-				a_misplaced.at(4).pop();
-			}
-
-			else if (!a_misplaced.at(5).empty())
-			{
-				current = a_misplaced.at(5).front();
-				a_misplaced.at(5).pop();
-			}
-
-			else if (!a_misplaced.at(6).empty())
-			{
-				current = a_misplaced.at(6).front();
-				a_misplaced.at(6).pop();
-			}
-
-			else if (!a_misplaced.at(7).empty())
-			{
-				current = a_misplaced.at(7).front();
-				a_misplaced.at(7).pop();
-			}
-
-			else if (!a_misplaced.at(8).empty())
-			{
-				current = a_misplaced.at(8).front();
-				a_misplaced.at(8).pop();
-			}
-			*/
+			
 			Z_Pos(verPos, horPos, current->cur);
 
 
@@ -621,7 +795,7 @@ int main()
 				right->cur = mv_right(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), right->cur) == traversed.end())
 				{
-					right->g += 1;
+					right->g = current->g+1;
 					right->h = misplaced(right->cur);
 					if (right->g + right->h < 40)
 					{
@@ -636,7 +810,7 @@ int main()
 				down->cur = mv_down(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), down->cur) == traversed.end())
 				{
-					down->g += 1;
+					down->g = current->g + 1 ;
 					down->h = misplaced(down->cur);
 					if (down->g + down->h < 40)
 					{
@@ -653,7 +827,7 @@ int main()
 				left->cur = mv_left(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), left->cur) == traversed.end())
 				{
-					left->g += 1;
+					left->g = current->g + 1;
 					left->h = misplaced(left->cur);
 					if (left->g + left->h < 40)
 					{
@@ -668,7 +842,7 @@ int main()
 				right->cur = mv_right(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), right->cur) == traversed.end())
 				{
-					right->g += 1;
+					right->g = current->g + 1;
 					right->h = misplaced(right->cur);
 					if (right->g + right->h < 40)
 					{
@@ -683,7 +857,7 @@ int main()
 				down->cur = mv_down(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), down->cur) == traversed.end())
 				{
-					down->g += 1;
+					down->g = current->g + 1;
 					down->h = misplaced(right->cur);
 					if (down->g + down->h < 40)
 					{
@@ -700,7 +874,7 @@ int main()
 				left->cur = mv_left(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), left->cur) == traversed.end())
 				{
-					left->g += 1;
+					left->g = current->g + 1;
 					left->h = misplaced(left->cur);
 					if (left->g + left->h < 40)
 					{
@@ -715,7 +889,7 @@ int main()
 				down->cur = mv_down(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), down->cur) == traversed.end())
 				{
-					down->g += 1;
+					down->g = current->g + 1;
 					down->h = misplaced(down->cur);
 					if (down->g + down->h < 40)
 					{
@@ -732,7 +906,7 @@ int main()
 				up->cur = mv_up(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), up->cur) == traversed.end())
 				{
-					up->g += 1;
+					up->g = current->g + 1;
 					up->h = misplaced(up->cur);
 					if (up->g + up->h < 40)
 					{
@@ -747,7 +921,7 @@ int main()
 				right->cur = mv_right(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), right->cur) == traversed.end())
 				{
-					right->g += 1;
+					right->g = current->g + 1;
 					right->h = misplaced(right->cur);
 					if (right->g + right->h < 40)
 					{
@@ -762,7 +936,7 @@ int main()
 				down->cur = mv_down(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), down->cur) == traversed.end())
 				{
-					down->g += 1;
+					down->g = current->g + 1;
 					down->h = misplaced(down->cur);
 					if (down->g + down->h < 40)
 					{
@@ -779,7 +953,7 @@ int main()
 				up->cur = mv_up(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), up->cur) == traversed.end())
 				{
-					up->g += 1;
+					up->g = current->g + 1;
 					up->h = misplaced(up->cur);
 					if (up->g + up->h < 40)
 					{
@@ -794,7 +968,7 @@ int main()
 				right->cur = mv_right(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), right->cur) == traversed.end())
 				{
-					right->g += 1;
+					right->g = current->g + 1;
 					right->h = misplaced(right->cur);
 					if (right->g + right->h < 40)
 					{
@@ -809,7 +983,7 @@ int main()
 				down->cur = mv_down(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), down->cur) == traversed.end())
 				{
-					down->g += 1;
+					down->g = current->g + 1;
 					down->h = misplaced(down->cur);
 					if (down->g + down->h < 40)
 					{
@@ -824,7 +998,7 @@ int main()
 				left->cur = mv_left(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), left->cur) == traversed.end())
 				{
-					left->g += 1;
+					left->g = current->g + 1;
 					left->h = misplaced(left->cur);
 					if (left ->g + left->h < 40)
 					{
@@ -841,7 +1015,7 @@ int main()
 				down->cur = mv_down(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), down->cur) == traversed.end())
 				{
-					down->g += 1;
+					down->g = current->g + 1;
 					down->h = misplaced(down->cur);
 					if (down->g + down->h < 40)
 					{
@@ -856,7 +1030,7 @@ int main()
 				up->cur = mv_up(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), up->cur) == traversed.end())
 				{
-					up->g += 1;
+					up->g = current->g + 1;
 					up->h = misplaced(up->cur);
 					if (up->g + up->h < 40)
 					{
@@ -871,7 +1045,7 @@ int main()
 				left->cur = mv_left(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), left->cur) == traversed.end())
 				{
-					left->g += 1;
+					left->g = current->g + 1;
 					left->h = misplaced(left->cur);
 					if (left->g + left->h < 40)
 					{
@@ -888,7 +1062,7 @@ int main()
 				up->cur = mv_up(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), up->cur) == traversed.end())
 				{
-					up->g += 1;
+					up->g = current->g + 1;
 					up->h = misplaced(up->cur);
 					if (up->g + up->h < 40)
 					{
@@ -903,7 +1077,7 @@ int main()
 				right->cur = mv_right(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), right->cur) == traversed.end())
 				{
-					right->g += 1;
+					right->g = current->g + 1;
 					right->h = misplaced(right->cur);
 					if (right->g + right->h < 40)
 					{
@@ -921,7 +1095,7 @@ int main()
 				up->cur = mv_up(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), up->cur) == traversed.end())
 				{
-					up->g += 1;
+					up->g = current->g + 1;
 					up->h = misplaced(up->cur);
 					if (up->g + up->h < 40)
 					{
@@ -936,7 +1110,7 @@ int main()
 				left->cur = mv_left(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), left->cur) == traversed.end())
 				{
-					left->g += 1;
+					left->g = current->g + 1;
 					left->h = misplaced(left->cur);
 					if (left->g + left->h < 40)
 					{
@@ -951,7 +1125,7 @@ int main()
 				right->cur = mv_right(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), right->cur) == traversed.end())
 				{
-					right->g += 1;
+					right->g = current->g + 1;
 					right->h = misplaced(right->cur);
 					if (right->g + right->h < 40)
 					{
@@ -968,7 +1142,7 @@ int main()
 				left->cur = mv_left(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), left->cur) == traversed.end())
 				{
-					left->g += 1;
+					left->g = current->g + 1;
 					left->h = misplaced(left->cur);
 					if (left->g + left->h < 40)
 					{
@@ -983,7 +1157,7 @@ int main()
 				up->cur = mv_up(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), up->cur) == traversed.end())
 				{
-					up->g += 1;
+					up->g = current->g + 1;
 					up->h = misplaced(up->cur);
 					if (up->g + up->h < 40)
 					{
@@ -993,6 +1167,8 @@ int main()
 				}
 			}
 		}
+
+		cout << "expanding state " << endl; //Starts to display
 
 		for (int i = 0; i < 3; i++)
 		{
@@ -1004,10 +1180,10 @@ int main()
 		}
 		cout << endl;
 
-		stack<vector<vector<int>>> solution;
+		stack<node*> solution;
 		while (current->cur != given->cur)
 		{
-			solution.push(current->cur);
+			solution.push(current);
 			current = current->prev;
 		}
 
@@ -1016,8 +1192,17 @@ int main()
 		while (solution.empty() != 1)
 		{
 			node *display = new node;
-			display->cur = solution.top();
+			display = solution.top();
 			solution.pop();
+
+			if (display->cur != goal)
+			{
+				cout << "Expanding this node. g(n) = " << display->g << " h(n) = " << display->h << endl;
+			}
+			else
+			{
+				cout << "Goal!" << endl;
+			}
 
 			for (int i = 0; i < 3; i++)
 			{
@@ -1029,8 +1214,483 @@ int main()
 			}
 			cout << endl;
 		}
+
+		cout << "# of nodes traversed: " << traversed.size() << endl;
+
 	}
 	//-------------------------A* with the Misplaced Tile Heuristic-------------------------//
+
+
+	//-------------------------A* with the Misplaced Tile Heuristic-------------------------//
+	else if (choice == 3)
+	{
+		node *given = new node;
+		given->cur = eight_puzzle;
+
+
+		node *init = new node;
+		init->cur = eight_puzzle;
+
+
+		node *current = init;
+
+
+		vector<vector<vector<int>>> traversed;
+		traversed.push_back(current->cur);
+
+		vector<queue<node*>>a_misplaced(31 + (4 * 9));//max depth + (Max Mdist * 9 numbers == 67)
+		a_misplaced.at(misplaced(init->cur)).push(init);
+
+		while (current->cur != goal)
+		{
+			for (int i = 0; i < 67; i++)
+			{
+				if (!a_misplaced.at(i).empty())
+				{
+					current = a_misplaced.at(i).front();
+					a_misplaced.at(i).pop();
+					break;
+				}
+			}
+
+
+			Z_Pos(verPos, horPos, current->cur);
+
+
+			if (verPos == 0 && horPos == 0)
+			{
+				node *right = new node;
+				right->prev = current;
+				right->cur = mv_right(verPos, horPos, current->cur);
+				if (find(traversed.begin(), traversed.end(), right->cur) == traversed.end())
+				{
+					right->g = current->g + 1;
+					right->h = Manhattan(right->cur);
+					if (right->g + right->h < 67)
+					{
+						a_misplaced.at(right->g + right->h).push(right);
+						traversed.push_back(right->cur);
+					}
+				}
+
+
+				node *down = new node;
+				down->prev = current;
+				down->cur = mv_down(verPos, horPos, current->cur);
+				if (find(traversed.begin(), traversed.end(), down->cur) == traversed.end())
+				{
+					down->g = current->g + 1;
+					down->h = Manhattan(down->cur);
+					if (down->g + down->h < 67)
+					{
+						a_misplaced.at(down->g + down->h).push(down);
+						traversed.push_back(down->cur);
+					}
+				}
+			}
+
+			else if (verPos == 0 && horPos == 1)
+			{
+				node *left = new node;
+				left->prev = current;
+				left->cur = mv_left(verPos, horPos, current->cur);
+				if (find(traversed.begin(), traversed.end(), left->cur) == traversed.end())
+				{
+					left->g = current->g + 1;
+					left->h = Manhattan(left->cur);
+					if (left->g + left->h < 67)
+					{
+						a_misplaced.at(left->g + left->h).push(left);
+						traversed.push_back(left->cur);
+					}
+				}
+
+
+				node *right = new node;
+				right->prev = current;
+				right->cur = mv_right(verPos, horPos, current->cur);
+				if (find(traversed.begin(), traversed.end(), right->cur) == traversed.end())
+				{
+					right->g = current->g + 1;
+					right->h = Manhattan(right->cur);
+					if (right->g + right->h < 67)
+					{
+						a_misplaced.at(right->g + right->h).push(right);
+						traversed.push_back(right->cur);
+					}
+				}
+
+
+				node *down = new node;
+				down->prev = current;
+				down->cur = mv_down(verPos, horPos, current->cur);
+				if (find(traversed.begin(), traversed.end(), down->cur) == traversed.end())
+				{
+					down->g = current->g + 1;
+					down->h = Manhattan(right->cur);
+					if (down->g + down->h < 67)
+					{
+						a_misplaced.at(down->g + down->h).push(down);
+						traversed.push_back(down->cur);
+					}
+				}
+			}
+
+			else if (verPos == 0 && horPos == 2)
+			{
+				node *left = new node;
+				left->prev = current;
+				left->cur = mv_left(verPos, horPos, current->cur);
+				if (find(traversed.begin(), traversed.end(), left->cur) == traversed.end())
+				{
+					left->g = current->g + 1;
+					left->h = Manhattan(left->cur);
+					if (left->g + left->h < 67)
+					{
+						a_misplaced.at(left->g + left->h).push(left);
+						traversed.push_back(left->cur);
+					}
+				}
+
+
+				node *down = new node;
+				down->prev = current;
+				down->cur = mv_down(verPos, horPos, current->cur);
+				if (find(traversed.begin(), traversed.end(), down->cur) == traversed.end())
+				{
+					down->g = current->g + 1;
+					down->h = Manhattan(down->cur);
+					if (down->g + down->h < 67)
+					{
+						a_misplaced.at(down->g + down->h).push(down);
+						traversed.push_back(down->cur);
+					}
+				}
+			}
+
+			else if (verPos == 1 && horPos == 0)
+			{
+				node *up = new node;
+				up->prev = current;
+				up->cur = mv_up(verPos, horPos, current->cur);
+				if (find(traversed.begin(), traversed.end(), up->cur) == traversed.end())
+				{
+					up->g = current->g + 1;
+					up->h = Manhattan(up->cur);
+					if (up->g + up->h < 67)
+					{
+						a_misplaced.at(up->g + up->h).push(up);
+						traversed.push_back(up->cur);
+					}
+				}
+
+
+				node *right = new node;
+				right->prev = current;
+				right->cur = mv_right(verPos, horPos, current->cur);
+				if (find(traversed.begin(), traversed.end(), right->cur) == traversed.end())
+				{
+					right->g = current->g + 1;
+					right->h = Manhattan(right->cur);
+					if (right->g + right->h < 67)
+					{
+						a_misplaced.at(right->g + right->h).push(right);
+						traversed.push_back(right->cur);
+					}
+				}
+
+
+				node *down = new node;
+				down->prev = current;
+				down->cur = mv_down(verPos, horPos, current->cur);
+				if (find(traversed.begin(), traversed.end(), down->cur) == traversed.end())
+				{
+					down->g = current->g + 1;
+					down->h = Manhattan(down->cur);
+					if (down->g + down->h < 67)
+					{
+						a_misplaced.at(down->g + down->h).push(down);
+						traversed.push_back(down->cur);
+					}
+				}
+			}
+
+			else if (verPos == 1 && horPos == 1)
+			{
+				node *up = new node;
+				up->prev = current;
+				up->cur = mv_up(verPos, horPos, current->cur);
+				if (find(traversed.begin(), traversed.end(), up->cur) == traversed.end())
+				{
+					up->g = current->g + 1;
+					up->h = Manhattan(up->cur);
+					if (up->g + up->h < 67)
+					{
+						a_misplaced.at(up->g + up->h).push(up);
+						traversed.push_back(up->cur);
+					}
+				}
+
+
+				node *right = new node;
+				right->prev = current;
+				right->cur = mv_right(verPos, horPos, current->cur);
+				if (find(traversed.begin(), traversed.end(), right->cur) == traversed.end())
+				{
+					right->g = current->g + 1;
+					right->h = Manhattan(right->cur);
+					if (right->g + right->h < 67)
+					{
+						a_misplaced.at(right->g + right->h).push(right);
+						traversed.push_back(right->cur);
+					}
+				}
+
+
+				node *down = new node;
+				down->prev = current;
+				down->cur = mv_down(verPos, horPos, current->cur);
+				if (find(traversed.begin(), traversed.end(), down->cur) == traversed.end())
+				{
+					down->g = current->g + 1;
+					down->h = Manhattan(down->cur);
+					if (down->g + down->h < 67)
+					{
+						a_misplaced.at(down->g + down->h).push(down);
+						traversed.push_back(down->cur);
+					}
+				}
+
+
+				node *left = new node;
+				left->prev = current;
+				left->cur = mv_left(verPos, horPos, current->cur);
+				if (find(traversed.begin(), traversed.end(), left->cur) == traversed.end())
+				{
+					left->g = current->g + 1;
+					left->h = Manhattan(left->cur);
+					if (left->g + left->h < 67)
+					{
+						a_misplaced.at(left->g + left->h).push(left);
+						traversed.push_back(left->cur);
+					}
+				}
+			}
+
+			else if (verPos == 1 && horPos == 2)
+			{
+				node *down = new node;
+				down->prev = current;
+				down->cur = mv_down(verPos, horPos, current->cur);
+				if (find(traversed.begin(), traversed.end(), down->cur) == traversed.end())
+				{
+					down->g = current->g + 1;
+					down->h = Manhattan(down->cur);
+					if (down->g + down->h < 67)
+					{
+						a_misplaced.at(down->g + down->h).push(down);
+						traversed.push_back(down->cur);
+					}
+				}
+
+
+				node *up = new node;
+				up->prev = current;
+				up->cur = mv_up(verPos, horPos, current->cur);
+				if (find(traversed.begin(), traversed.end(), up->cur) == traversed.end())
+				{
+					up->g = current->g + 1;
+					up->h = Manhattan(up->cur);
+					if (up->g + up->h < 67)
+					{
+						a_misplaced.at(up->g + up->h).push(up);
+						traversed.push_back(up->cur);
+					}
+				}
+
+
+				node *left = new node;
+				left->prev = current;
+				left->cur = mv_left(verPos, horPos, current->cur);
+				if (find(traversed.begin(), traversed.end(), left->cur) == traversed.end())
+				{
+					left->g = current->g + 11;
+					left->h = Manhattan(left->cur);
+					if (left->g + left->h < 67)
+					{
+						a_misplaced.at(left->g + left->h).push(left);
+						traversed.push_back(left->cur);
+					}
+				}
+			}
+
+			else if (verPos == 2 && horPos == 0)
+			{
+				node *up = new node;
+				up->prev = current;
+				up->cur = mv_up(verPos, horPos, current->cur);
+				if (find(traversed.begin(), traversed.end(), up->cur) == traversed.end())
+				{
+					up->g = current->g + 1;
+					up->h = Manhattan(up->cur);
+					if (up->g + up->h < 67)
+					{
+						a_misplaced.at(up->g + up->h).push(up);
+						traversed.push_back(up->cur);
+					}
+				}
+
+
+				node *right = new node;
+				right->prev = current;
+				right->cur = mv_right(verPos, horPos, current->cur);
+				if (find(traversed.begin(), traversed.end(), right->cur) == traversed.end())
+				{
+					right->g = current->g + 1;
+					right->h = Manhattan(right->cur);
+					if (right->g + right->h < 67)
+					{
+						a_misplaced.at(right->g + right->h).push(right);
+						traversed.push_back(right->cur);
+					}
+				}
+			}
+
+			else if (verPos == 2 && horPos == 1)
+			{
+
+				node *up = new node;
+				up->prev = current;
+				up->cur = mv_up(verPos, horPos, current->cur);
+				if (find(traversed.begin(), traversed.end(), up->cur) == traversed.end())
+				{
+					up->g = current->g + 1;
+					up->h = Manhattan(up->cur);
+					if (up->g + up->h < 67)
+					{
+						a_misplaced.at(up->g + up->h).push(up);
+						traversed.push_back(up->cur);
+					}
+				}
+
+
+				node *left = new node;
+				left->prev = current;
+				left->cur = mv_left(verPos, horPos, current->cur);
+				if (find(traversed.begin(), traversed.end(), left->cur) == traversed.end())
+				{
+					left->g = current->g + 1;
+					left->h = Manhattan(left->cur);
+					if (left->g + left->h < 67)
+					{
+						a_misplaced.at(left->g + left->h).push(left);
+						traversed.push_back(left->cur);
+					}
+				}
+
+
+				node *right = new node;
+				right->prev = current;
+				right->cur = mv_right(verPos, horPos, current->cur);
+				if (find(traversed.begin(), traversed.end(), right->cur) == traversed.end())
+				{
+					right->g = current->g + 1;
+					right->h = Manhattan(right->cur);
+					if (right->g + right->h < 67)
+					{
+						a_misplaced.at(right->g + right->h).push(right);
+						traversed.push_back(right->cur);
+					}
+				}
+			}
+
+			else if (verPos == 2 && horPos == 2)
+			{
+				node *left = new node;
+				left->prev = current;
+				left->cur = mv_left(verPos, horPos, current->cur);
+				if (find(traversed.begin(), traversed.end(), left->cur) == traversed.end())
+				{
+					left->g = current->g + 1;
+					left->h = Manhattan(left->cur);
+					if (left->g + left->h < 67)
+					{
+						a_misplaced.at(left->g + left->h).push(left);
+						traversed.push_back(left->cur);
+					}
+				}
+
+
+				node *up = new node;
+				up->prev = current;
+				up->cur = mv_up(verPos, horPos, current->cur);
+				if (find(traversed.begin(), traversed.end(), up->cur) == traversed.end())
+				{
+					up->g = current->g + 1;
+					up->h = Manhattan(up->cur);
+					if (up->g + up->h < 67)
+					{
+						a_misplaced.at(up->g + up->h).push(up);
+						traversed.push_back(up->cur);
+					}
+				}
+			}
+		}
+
+		cout << "expanding state " << endl; //Starts to display
+
+		for (int i = 0; i < 3; i++)
+		{
+			for (int k = 0; k < 3; k++)
+			{
+				cout << init->cur.at(i).at(k) << " ";
+			}
+			cout << endl;
+		}
+		cout << endl;
+
+		stack<node*> solution;
+		while (current->cur != given->cur)
+		{
+			solution.push(current);
+			current = current->prev;
+		}
+
+
+
+		while (solution.empty() != 1)
+		{
+			node *display = new node;
+			display = solution.top();
+			solution.pop();
+
+			if (display->cur != goal)
+			{
+				cout << "Expanding this node. g(n) = " << display->g << " h(n) = " << display->h << endl;
+			}
+			else
+			{
+				cout << "Goal!" << endl;
+			}
+
+			for (int i = 0; i < 3; i++)
+			{
+				for (int k = 0; k < 3; k++)
+				{
+					cout << display->cur.at(i).at(k) << " ";
+				}
+				cout << endl;
+			}
+			cout << endl;
+		}
+
+		cout << "# of nodes traversed: " << traversed.size() << endl;
+
+	}
+	//-------------------------A* with the Misplaced Tile Heuristic-------------------------//
+
+
+
 
 	cin.get();
 
