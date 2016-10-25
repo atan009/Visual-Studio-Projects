@@ -315,6 +315,97 @@ int Manhattan(vector<vector<int>> current)
 
 }
 
+//-------------------------The two A* algorithms-------------------------//
+
+bool solvable(vector<vector<int>> current)
+{
+	vector<int> linear;
+	int s = 0;
+	int zero = 0, one = 0, two = 0, three = 0, four = 0, five = 0, six = 0, seven = 0, eight = 0;
+
+	for (int i = 0; i < 3; i++)
+	{
+		for (int k = 0; k < 3; k++)
+		{
+			linear.push_back(current.at(i).at(k));
+		}
+	}
+
+	for (int i = 0; i < 9; i++)
+	{
+		if (linear.at(i) == 0)
+		{
+			zero = 1;
+		}
+
+		else if (linear.at(i) == 1)
+		{
+			one = 1;
+		}
+
+		else if (linear.at(i) == 2)
+		{
+			two = 1;
+		}
+
+		else if (linear.at(i) == 3)
+		{
+			three = 1;
+		}
+
+		else if (linear.at(i) == 4)
+		{
+			four = 1;
+		}
+
+		else if (linear.at(i) == 5)
+		{
+			five = 1;
+		}
+
+		else if (linear.at(i) == 6)
+		{
+			six = 1;
+		}
+
+		else if (linear.at(i) == 7)
+		{
+			seven = 1;
+		}
+
+		else if (linear.at(i) == 8)
+		{
+			eight = 1;
+		}
+	}
+	
+	for (int l = 0; l < 8; l++)
+	{
+		for (int m = l + 1; m < 9; m++)
+		{
+
+			if (linear.at(m) < linear.at(l) && linear.at(m) != 0)
+			{
+				s += 1;
+			}
+		}
+
+	}
+
+
+
+	if (s % 2 == 0 && zero == 1 && one == 1 && two == 1 && three == 1 && four == 1 && five == 1 && six == 1 && seven == 1 && eight == 1)
+	{
+		return 1;
+	}
+
+	else
+	{
+		return 0;
+	}
+
+}
+
 int main()
 {
 	int verPos;//for determining X/Y of Zero
@@ -386,7 +477,12 @@ int main()
 		cout << endl;
 	}
 
-	
+	if (!solvable(eight_puzzle))
+	{
+		cout << "Not solvable." << endl;
+		cin.get();
+		return 0;
+	}
 	
 
 	cout << "Enter your choice of algorithm" << endl;
@@ -447,6 +543,7 @@ int main()
 				right->cur = mv_right(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), right->cur) == traversed.end())
 				{
+					right->g = current->g + 1;
 					UCS.push(right);
 					traversed.push_back(right->cur);
 				}
@@ -457,6 +554,7 @@ int main()
 				down->cur = mv_down(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), down->cur) == traversed.end())
 				{
+					down->g = current->g + 1;
 					UCS.push(down);
 					traversed.push_back(down->cur);
 				}
@@ -469,6 +567,7 @@ int main()
 				left->cur = mv_left(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), left->cur) == traversed.end())
 				{
+					left->g = current->g + 1;
 					UCS.push(left);
 					traversed.push_back(left->cur);
 				}
@@ -479,6 +578,7 @@ int main()
 				right->cur = mv_right(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), right->cur) == traversed.end())
 				{
+					right->g = current->g + 1;
 					UCS.push(right);
 					traversed.push_back(right->cur);
 				}
@@ -489,6 +589,7 @@ int main()
 				down->cur = mv_down(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), down->cur) == traversed.end())
 				{
+					down->g = current->g + 1;
 					UCS.push(down);
 					traversed.push_back(down->cur);
 				}
@@ -501,6 +602,7 @@ int main()
 				left->cur = mv_left(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), left->cur) == traversed.end())
 				{
+					left->g = current->g + 1;
 					UCS.push(left);
 					traversed.push_back(left->cur);
 				}
@@ -511,6 +613,7 @@ int main()
 				down->cur = mv_down(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), down->cur) == traversed.end())
 				{
+					down->g = current->g + 1;
 					UCS.push(down);
 					traversed.push_back(down->cur);
 				}
@@ -523,6 +626,7 @@ int main()
 				up->cur = mv_up(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), up->cur) == traversed.end())
 				{
+					up->g = current->g + 1;
 					UCS.push(up);
 					traversed.push_back(up->cur);
 				}
@@ -533,6 +637,7 @@ int main()
 				right->cur = mv_right(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), right->cur) == traversed.end())
 				{
+					right->g = current->g + 1;
 					UCS.push(right);
 					traversed.push_back(right->cur);
 				}
@@ -543,6 +648,7 @@ int main()
 				down->cur = mv_down(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), down->cur) == traversed.end())
 				{
+					down->g = current->g + 1;
 					UCS.push(down);
 					traversed.push_back(down->cur);
 				}
@@ -555,6 +661,7 @@ int main()
 				up->cur = mv_up(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), up->cur) == traversed.end())
 				{
+					up->g = current->g + 1;
 					UCS.push(up);
 					traversed.push_back(up->cur);
 				}
@@ -565,6 +672,7 @@ int main()
 				right->cur = mv_right(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), right->cur) == traversed.end())
 				{
+					right->g = current->g + 1;
 					UCS.push(right);
 					traversed.push_back(right->cur);
 				}
@@ -575,6 +683,7 @@ int main()
 				down->cur = mv_down(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), down->cur) == traversed.end())
 				{
+					down->g = current->g + 1;
 					UCS.push(down);
 					traversed.push_back(down->cur);
 				}
@@ -585,6 +694,7 @@ int main()
 				left->cur = mv_left(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), left->cur) == traversed.end())
 				{
+					left->g = current->g + 1;
 					UCS.push(left);
 					traversed.push_back(left->cur);
 				}
@@ -597,6 +707,7 @@ int main()
 				down->cur = mv_down(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), down->cur) == traversed.end())
 				{
+					down->g = current->g + 1;
 					UCS.push(down);
 					traversed.push_back(down->cur);
 				}
@@ -607,6 +718,7 @@ int main()
 				up->cur = mv_up(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), up->cur) == traversed.end())
 				{
+					up->g = current->g + 1;
 					UCS.push(up);
 					traversed.push_back(up->cur);
 				}
@@ -617,6 +729,7 @@ int main()
 				left->cur = mv_left(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), left->cur) == traversed.end())
 				{
+					left->g = current->g + 1;
 					UCS.push(left);
 					traversed.push_back(left->cur);
 				}
@@ -629,6 +742,7 @@ int main()
 				up->cur = mv_up(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), up->cur) == traversed.end())
 				{
+					up->g = current->g + 1;
 					UCS.push(up);
 					traversed.push_back(up->cur);
 				}
@@ -639,6 +753,7 @@ int main()
 				right->cur = mv_right(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), right->cur) == traversed.end())
 				{
+					right->g = current->g + 1;
 					UCS.push(right);
 					traversed.push_back(right->cur);
 				}
@@ -652,6 +767,7 @@ int main()
 				up->cur = mv_up(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), up->cur) == traversed.end())
 				{
+					up->g = current->g + 1;
 					UCS.push(up);
 					traversed.push_back(up->cur);
 				}
@@ -662,6 +778,7 @@ int main()
 				left->cur = mv_left(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), left->cur) == traversed.end())
 				{
+					left->g = current->g + 1;
 					UCS.push(left);
 					traversed.push_back(left->cur);
 				}
@@ -672,6 +789,7 @@ int main()
 				right->cur = mv_right(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), right->cur) == traversed.end())
 				{
+					right->g = current->g + 1;
 					UCS.push(right);
 					traversed.push_back(right->cur);
 				}
@@ -684,6 +802,7 @@ int main()
 				left->cur = mv_left(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), left->cur) == traversed.end())
 				{
+					left->g = current->g + 1;
 					UCS.push(left);
 					traversed.push_back(left->cur);
 				}
@@ -694,6 +813,7 @@ int main()
 				up->cur = mv_up(verPos, horPos, current->cur);
 				if (find(traversed.begin(), traversed.end(), up->cur) == traversed.end())
 				{
+					up->g = current->g + 1;
 					UCS.push(up);
 					traversed.push_back(up->cur);
 				}
@@ -712,10 +832,10 @@ int main()
 		}
 		cout << endl;
 
-		stack<vector<vector<int>>> solution;
+		stack<node*> solution;
 		while (current->cur != given->cur)
 		{
-			solution.push(current->cur);
+			solution.push(current);
 			current = current->prev;
 		}
 
@@ -724,12 +844,12 @@ int main()
 		while (solution.empty() != 1)
 		{
 			node *display = new node;
-			display->cur = solution.top();
+			display = solution.top();
 			solution.pop();
 
 			if (display->cur != goal)
 			{
-				cout << "Expanding this node" << endl;
+				cout << "Expanding this node. g(n) = " << display->g << endl;
 			}
 			else
 			{
