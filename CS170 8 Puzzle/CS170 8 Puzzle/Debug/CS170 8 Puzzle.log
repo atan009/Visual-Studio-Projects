@@ -1,3 +1,6 @@
 ﻿  Source.cpp
+c:\users\tan\documents\visual studio 2015\projects\cs170 8 puzzle\cs170 8 puzzle\source.cpp(804): warning C4018: '>': signed/unsigned mismatch
+c:\users\tan\documents\visual studio 2015\projects\cs170 8 puzzle\cs170 8 puzzle\source.cpp(1179): warning C4018: '<': signed/unsigned mismatch
+c:\users\tan\documents\visual studio 2015\projects\cs170 8 puzzle\cs170 8 puzzle\source.cpp(1757): warning C4018: '<': signed/unsigned mismatch
   CS170 8 Puzzle.vcxproj -> C:\Users\Tan\documents\visual studio 2015\Projects\CS170 8 Puzzle\Debug\CS170 8 Puzzle.exe
   CS170 8 Puzzle.vcxproj -> C:\Users\Tan\documents\visual studio 2015\Projects\CS170 8 Puzzle\Debug\CS170 8 Puzzle.pdb (Partial PDB)

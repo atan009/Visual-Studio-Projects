@@ -103,6 +103,48 @@ int misplaced(vector<vector<int>> current)
 	return misplaced;
 }
 
+int misplaced_2(vector<vector<int>> current)
+{
+	int misplaced = 0;
+	if (current.at(0).at(0) != 1)
+	{
+		misplaced += 1;
+	}
+	if (current.at(0).at(1) != 2)
+	{
+		misplaced += 1;
+	}
+	if (current.at(0).at(2) != 3)
+	{
+		misplaced += 1;
+	}
+	if (current.at(1).at(0) != 8)
+	{
+		misplaced += 1;
+	}
+	if (current.at(1).at(1) != 0)
+	{
+		misplaced += 1;
+	}
+	if (current.at(1).at(2) != 4)
+	{
+		misplaced += 1;
+	}
+	if (current.at(2).at(0) != 7)
+	{
+		misplaced += 1;
+	}
+	if (current.at(2).at(1) != 6)
+	{
+		misplaced += 1;
+	}
+	if (current.at(2).at(2) != 5)
+	{
+		misplaced += 1;
+	}
+	return misplaced;
+}
+
 
 //counts Manhattan distance of all tiles
 int Manhattan(vector<vector<int>> current)
@@ -315,6 +357,216 @@ int Manhattan(vector<vector<int>> current)
 
 }
 
+int Manhattan_2(vector<vector<int>> current)
+{
+	int Manhattan = 0;
+
+	if (current.at(0).at(0) == 1)
+	{
+		Manhattan += 0;
+	}
+
+	else if (current.at(0).at(0) == 2 || current.at(0).at(0) == 8)
+	{
+		Manhattan += 1;
+	}
+
+	else if (current.at(0).at(0) == 3 || current.at(0).at(0) == 0 || current.at(0).at(0) == 7)
+	{
+		Manhattan += 2;
+	}
+
+	else if (current.at(0).at(0) == 4 || current.at(0).at(0) == 6)
+	{
+		Manhattan += 3;
+	}
+
+	else if (current.at(0).at(0) == 5)
+	{
+		Manhattan += 4;
+	}
+
+
+	if (current.at(0).at(1) == 2)
+	{
+		Manhattan += 0;
+	}
+
+	else if (current.at(0).at(1) == 0 || current.at(0).at(1) == 1 || current.at(0).at(1) == 3)
+	{
+		Manhattan += 1;
+	}
+
+	else if (current.at(0).at(1) == 4 || current.at(0).at(1) == 6 || current.at(0).at(1) == 8)
+	{
+		Manhattan += 2;
+	}
+
+	else if (current.at(0).at(1) == 5 || current.at(0).at(1) == 7)
+	{
+		Manhattan += 3;
+	}
+
+
+	if (current.at(0).at(2) == 3)
+	{
+		Manhattan += 0;
+	}
+
+	else if (current.at(0).at(2) == 2 || current.at(0).at(2) == 4)
+	{
+		Manhattan += 1;
+	}
+
+	else if (current.at(0).at(2) == 0 || current.at(0).at(2) == 1 || current.at(0).at(2) == 5)
+	{
+		Manhattan += 2;
+	}
+
+	else if (current.at(0).at(2) == 6 || current.at(0).at(2) == 8)
+	{
+		Manhattan += 3;
+	}
+
+	else if (current.at(0).at(2) == 7)
+	{
+		Manhattan += 4;
+	}
+
+
+	if (current.at(1).at(0) == 8)
+	{
+		Manhattan += 0;
+	}
+
+	else if (current.at(1).at(0) == 0 || current.at(1).at(0) == 1 || current.at(1).at(0) == 7)
+	{
+		Manhattan += 1;
+	}
+
+	else if (current.at(1).at(0) == 2 || current.at(1).at(0) == 4 || current.at(1).at(0) == 6)
+	{
+		Manhattan += 2;
+	}
+
+	else if (current.at(1).at(0) == 3 || current.at(1).at(0) == 5)
+	{
+		Manhattan += 3;
+	}
+
+
+	if (current.at(1).at(1) == 0)
+	{
+		Manhattan += 0;
+	}
+
+	else if (current.at(1).at(1) == 2 || current.at(1).at(1) == 4 || current.at(1).at(1) == 6 || current.at(1).at(1) == 8)
+	{
+		Manhattan += 1;
+	}
+
+	else if (current.at(1).at(1) == 1 || current.at(1).at(1) == 3 || current.at(1).at(1) == 5 || current.at(1).at(1) == 7)
+	{
+		Manhattan += 2;
+	}
+
+
+	if (current.at(1).at(2) == 4)
+	{
+		Manhattan += 0;
+	}
+
+	else if (current.at(1).at(2) == 0 || current.at(1).at(2) == 3 || current.at(1).at(2) == 5)
+	{
+		Manhattan += 1;
+	}
+
+	else if (current.at(1).at(2) == 2 || current.at(1).at(2) == 6 || current.at(1).at(2) == 8)
+	{
+		Manhattan += 2;
+	}
+
+	else if (current.at(1).at(2) == 1 || current.at(1).at(2) == 7)
+	{
+		Manhattan += 3;
+	}
+
+
+	if (current.at(2).at(0) == 7)
+	{
+		Manhattan += 0;
+	}
+
+	else if (current.at(2).at(0) == 6 || current.at(2).at(0) == 8)
+	{
+		Manhattan += 1;
+	}
+
+	else if (current.at(2).at(0) == 0 || current.at(2).at(0) == 1 || current.at(2).at(0) == 5)
+	{
+		Manhattan += 2;
+	}
+
+	else if (current.at(2).at(0) == 2 || current.at(2).at(0) == 4)
+	{
+		Manhattan += 3;
+	}
+
+	else if (current.at(2).at(0) == 3)
+	{
+		Manhattan += 4;
+	}
+
+
+	if (current.at(2).at(1) == 6)
+	{
+		Manhattan += 0;
+	}
+
+	else if (current.at(2).at(1) == 0 || current.at(2).at(1) == 5 || current.at(2).at(1) == 7)
+	{
+		Manhattan += 1;
+	}
+
+	else if (current.at(2).at(1) == 2 || current.at(2).at(1) == 4 || current.at(2).at(1) == 8)
+	{
+		Manhattan += 2;
+	}
+
+	else if (current.at(2).at(1) == 1 || current.at(2).at(1) == 3)
+	{
+		Manhattan += 3;
+	}
+
+	if (current.at(2).at(2) == 5)
+	{
+		Manhattan += 0;
+	}
+
+	else if (current.at(2).at(2) == 4 || current.at(2).at(2) == 6)
+	{
+		Manhattan += 1;
+	}
+
+	else if (current.at(2).at(2) == 0 || current.at(2).at(2) == 3 || current.at(2).at(2) == 7)
+	{
+		Manhattan += 2;
+	}
+
+	else if (current.at(2).at(2) == 2 || current.at(2).at(2) == 8)
+	{
+		Manhattan += 3;
+	}
+
+	else if (current.at(2).at(2) == 1)
+	{
+		Manhattan += 4;
+	}
+
+	return Manhattan;
+
+}
+
 //-------------------------The two A* algorithms-------------------------//
 
 bool solvable(vector<vector<int>> current)
@@ -413,6 +665,11 @@ int main()
 	int choice;
 
 	cout << "Welcome to Alex Tan's 8-puzzle solver." << endl;
+
+	int goal_state;
+	cout << "1 for default goal state, 2 for blank in center." << endl;
+	cin >> goal_state;
+
 	cout << "type \"1\" to use default puzzle, or \"2\" to enter your own puzzle" << endl;
 
 	
@@ -428,7 +685,19 @@ int main()
 	cout << choice << " selected" << endl;
 
 	vector<vector<int>>eight_puzzle{ { 0, 0, 0}, {0, 0, 0}, {0, 0, 0} };
+
+	if (goal_state != 1 && goal_state != 2)
+	{
+		cout << "Non-valid input, exitting" << endl;
+		return 0;
+	}
+
+
 	vector<vector<int>>goal{ { 1, 2, 3 },{ 4, 5, 6 },{ 7, 8, 0 } };
+	if (goal_state == 2)
+	{
+		goal = { { 1, 2, 3 },{ 8, 0, 4 },{ 7, 6, 5 } };
+	}
 
 	if (choice == 1)
 	{
@@ -477,7 +746,7 @@ int main()
 		cout << endl;
 	}
 
-	if (!solvable(eight_puzzle))
+	if (!solvable(eight_puzzle) && goal_state == 1)
 	{
 		cout << "Not solvable." << endl;
 		cin.get();
@@ -508,7 +777,7 @@ int main()
 		vector<vector<int>> cur;//current state of puzzle
 	};
 
-
+	int max_q = 0;
 
 	//-------------------------Uniform Cost Search-------------------------//
 	if (choice == 1)
@@ -532,6 +801,11 @@ int main()
 		//performs the UCS search (BFS).
 		while (current->cur != goal)
 		{
+			if (UCS.size() > max_q)
+			{
+				max_q = UCS.size();
+			}
+
 			current = UCS.front();//start from first node
 			Z_Pos(verPos, horPos, current->cur);//determine where 0 is
 			UCS.pop();//start unqueueing
@@ -870,6 +1144,7 @@ int main()
 		}
 
 		cout << "# of nodes traversed: " << traversed.size() << endl;
+		cout << "Max number of nodes in queue: " << max_q << endl;
 	}
 
 	//-------------------------Uniform Cost Search-------------------------//
@@ -895,8 +1170,21 @@ int main()
 		vector<queue<node*>>a_misplaced(31+9);//max depth + incorrect nodes
 		a_misplaced.at(misplaced(init->cur)).push(init);
 
+		
+
 		while (current->cur != goal)
 		{
+
+			int temp = 0;
+			for (int i = 0; i < a_misplaced.size(); i++)
+			{
+				temp += a_misplaced.at(i).size();
+			}
+			if (temp > max_q)
+			{
+				max_q = temp;
+			}
+
 			for (int i = 0; i < 40; i++)
 			{
 				if (!a_misplaced.at(i).empty())
@@ -920,6 +1208,11 @@ int main()
 				{
 					right->g = current->g+1;
 					right->h = misplaced(right->cur);
+					if (goal_state == 2)
+					{
+						right->h = misplaced_2(right->cur);
+					}
+
 					if (right->g + right->h < 40)
 					{
 						a_misplaced.at(right->g + right->h).push(right);
@@ -935,6 +1228,10 @@ int main()
 				{
 					down->g = current->g + 1 ;
 					down->h = misplaced(down->cur);
+					if (goal_state == 2)
+					{
+						down->h = misplaced_2(down->cur);
+					}
 					if (down->g + down->h < 40)
 					{
 						a_misplaced.at(down->g + down->h).push(down);
@@ -952,6 +1249,10 @@ int main()
 				{
 					left->g = current->g + 1;
 					left->h = misplaced(left->cur);
+					if (goal_state == 2)
+					{
+						left->h = misplaced_2(left->cur);
+					}
 					if (left->g + left->h < 40)
 					{
 						a_misplaced.at(left->g + left->h).push(left);
@@ -967,6 +1268,10 @@ int main()
 				{
 					right->g = current->g + 1;
 					right->h = misplaced(right->cur);
+					if (goal_state == 2)
+					{
+						right->h = misplaced_2(right->cur);
+					}
 					if (right->g + right->h < 40)
 					{
 						a_misplaced.at(right->g + right->h).push(right);
@@ -982,6 +1287,10 @@ int main()
 				{
 					down->g = current->g + 1;
 					down->h = misplaced(right->cur);
+					if (goal_state == 2)
+					{
+						down->h = misplaced_2(down->cur);
+					}
 					if (down->g + down->h < 40)
 					{
 						a_misplaced.at(down->g + down->h).push(down);
@@ -999,6 +1308,10 @@ int main()
 				{
 					left->g = current->g + 1;
 					left->h = misplaced(left->cur);
+					if (goal_state == 2)
+					{
+						left->h = misplaced_2(left->cur);
+					}
 					if (left->g + left->h < 40)
 					{
 						a_misplaced.at(left->g + left->h).push(left);
@@ -1014,6 +1327,10 @@ int main()
 				{
 					down->g = current->g + 1;
 					down->h = misplaced(down->cur);
+					if (goal_state == 2)
+					{
+						down->h = misplaced_2(down->cur);
+					}
 					if (down->g + down->h < 40)
 					{
 						a_misplaced.at(down->g + down->h).push(down);
@@ -1031,6 +1348,10 @@ int main()
 				{
 					up->g = current->g + 1;
 					up->h = misplaced(up->cur);
+					if (goal_state == 2)
+					{
+						up->h = misplaced_2(up->cur);
+					}
 					if (up->g + up->h < 40)
 					{
 						a_misplaced.at(up->g + up->h).push(up);
@@ -1046,6 +1367,10 @@ int main()
 				{
 					right->g = current->g + 1;
 					right->h = misplaced(right->cur);
+					if (goal_state == 2)
+					{
+						right->h = misplaced_2(right->cur);
+					}
 					if (right->g + right->h < 40)
 					{
 						a_misplaced.at(right->g + right->h).push(right);
@@ -1061,6 +1386,10 @@ int main()
 				{
 					down->g = current->g + 1;
 					down->h = misplaced(down->cur);
+					if (goal_state == 2)
+					{
+						down->h = misplaced_2(down->cur);
+					}
 					if (down->g + down->h < 40)
 					{
 						a_misplaced.at(down->g + down->h).push(down);
@@ -1078,6 +1407,10 @@ int main()
 				{
 					up->g = current->g + 1;
 					up->h = misplaced(up->cur);
+					if (goal_state == 2)
+					{
+						up->h = misplaced_2(up->cur);
+					}
 					if (up->g + up->h < 40)
 					{
 						a_misplaced.at(up->g + up->h).push(up);
@@ -1093,6 +1426,10 @@ int main()
 				{
 					right->g = current->g + 1;
 					right->h = misplaced(right->cur);
+					if (goal_state == 2)
+					{
+						right->h = misplaced_2(right->cur);
+					}
 					if (right->g + right->h < 40)
 					{
 						a_misplaced.at(right->g + right->h).push(right);
@@ -1108,6 +1445,10 @@ int main()
 				{
 					down->g = current->g + 1;
 					down->h = misplaced(down->cur);
+					if (goal_state == 2)
+					{
+						down->h = misplaced_2(down->cur);
+					}
 					if (down->g + down->h < 40)
 					{
 						a_misplaced.at(down->g + down->h).push(down);
@@ -1123,6 +1464,10 @@ int main()
 				{
 					left->g = current->g + 1;
 					left->h = misplaced(left->cur);
+					if (goal_state == 2)
+					{
+						left->h = misplaced_2(left->cur);
+					}
 					if (left ->g + left->h < 40)
 					{
 						a_misplaced.at(left->g + left->h).push(left);
@@ -1140,6 +1485,10 @@ int main()
 				{
 					down->g = current->g + 1;
 					down->h = misplaced(down->cur);
+					if (goal_state == 2)
+					{
+						down->h = misplaced_2(down->cur);
+					}
 					if (down->g + down->h < 40)
 					{
 						a_misplaced.at(down->g + down->h).push(down);
@@ -1155,6 +1504,10 @@ int main()
 				{
 					up->g = current->g + 1;
 					up->h = misplaced(up->cur);
+					if (goal_state == 2)
+					{
+						up->h = misplaced_2(up->cur);
+					}
 					if (up->g + up->h < 40)
 					{
 						a_misplaced.at(up->g + up->h).push(up);
@@ -1170,6 +1523,10 @@ int main()
 				{
 					left->g = current->g + 1;
 					left->h = misplaced(left->cur);
+					if (goal_state == 2)
+					{
+						left->h = misplaced_2(left->cur);
+					}
 					if (left->g + left->h < 40)
 					{
 						a_misplaced.at(left->g + left->h).push(left);
@@ -1187,6 +1544,10 @@ int main()
 				{
 					up->g = current->g + 1;
 					up->h = misplaced(up->cur);
+					if (goal_state == 2)
+					{
+						up->h = misplaced_2(up->cur);
+					}
 					if (up->g + up->h < 40)
 					{
 						a_misplaced.at(up->g + up->h).push(up);
@@ -1202,6 +1563,10 @@ int main()
 				{
 					right->g = current->g + 1;
 					right->h = misplaced(right->cur);
+					if (goal_state == 2)
+					{
+						right->h = misplaced_2(right->cur);
+					}
 					if (right->g + right->h < 40)
 					{
 						a_misplaced.at(right->g + right->h).push(right);
@@ -1220,6 +1585,10 @@ int main()
 				{
 					up->g = current->g + 1;
 					up->h = misplaced(up->cur);
+					if (goal_state == 2)
+					{
+						up->h = misplaced_2(up->cur);
+					}
 					if (up->g + up->h < 40)
 					{
 						a_misplaced.at(up->g + up->h).push(up);
@@ -1235,6 +1604,10 @@ int main()
 				{
 					left->g = current->g + 1;
 					left->h = misplaced(left->cur);
+					if (goal_state == 2)
+					{
+						left->h = misplaced_2(left->cur);
+					}
 					if (left->g + left->h < 40)
 					{
 						a_misplaced.at(left->g + left->h).push(left);
@@ -1250,6 +1623,10 @@ int main()
 				{
 					right->g = current->g + 1;
 					right->h = misplaced(right->cur);
+					if (goal_state == 2)
+					{
+						right->h = misplaced_2(right->cur);
+					}
 					if (right->g + right->h < 40)
 					{
 						a_misplaced.at(right->g + right->h).push(right);
@@ -1267,6 +1644,10 @@ int main()
 				{
 					left->g = current->g + 1;
 					left->h = misplaced(left->cur);
+					if (goal_state == 2)
+					{
+						left->h = misplaced_2(left->cur);
+					}
 					if (left->g + left->h < 40)
 					{
 						a_misplaced.at(left->g + left->h).push(left);
@@ -1282,6 +1663,10 @@ int main()
 				{
 					up->g = current->g + 1;
 					up->h = misplaced(up->cur);
+					if (goal_state == 2)
+					{
+						up->h = misplaced_2(up->cur);
+					}
 					if (up->g + up->h < 40)
 					{
 						a_misplaced.at(up->g + up->h).push(up);
@@ -1339,6 +1724,7 @@ int main()
 		}
 
 		cout << "# of nodes traversed: " << traversed.size() << endl;
+		cout << "Max nodes in queue: " << max_q << endl;
 
 	}
 	//-------------------------A* with the Misplaced Tile Heuristic-------------------------//
@@ -1366,6 +1752,17 @@ int main()
 
 		while (current->cur != goal)
 		{
+
+			int temp = 0;
+			for (int i = 0; i < a_misplaced.size(); i++)
+			{
+				temp += a_misplaced.at(i).size();
+			}
+			if (temp > max_q)
+			{
+				max_q = temp;
+			}
+
 			for (int i = 0; i < 67; i++)
 			{
 				if (!a_misplaced.at(i).empty())
@@ -1389,6 +1786,10 @@ int main()
 				{
 					right->g = current->g + 1;
 					right->h = Manhattan(right->cur);
+					if (goal_state == 2)
+					{
+						right->h = Manhattan_2(right->cur);
+					}
 					if (right->g + right->h < 67)
 					{
 						a_misplaced.at(right->g + right->h).push(right);
@@ -1404,6 +1805,10 @@ int main()
 				{
 					down->g = current->g + 1;
 					down->h = Manhattan(down->cur);
+					if (goal_state == 2)
+					{
+						down->h = Manhattan_2(down->cur);
+					}
 					if (down->g + down->h < 67)
 					{
 						a_misplaced.at(down->g + down->h).push(down);
@@ -1421,6 +1826,10 @@ int main()
 				{
 					left->g = current->g + 1;
 					left->h = Manhattan(left->cur);
+					if (goal_state == 2)
+					{
+						left->h = Manhattan_2(left->cur);
+					}
 					if (left->g + left->h < 67)
 					{
 						a_misplaced.at(left->g + left->h).push(left);
@@ -1436,6 +1845,10 @@ int main()
 				{
 					right->g = current->g + 1;
 					right->h = Manhattan(right->cur);
+					if (goal_state == 2)
+					{
+						right->h = Manhattan_2(right->cur);
+					}
 					if (right->g + right->h < 67)
 					{
 						a_misplaced.at(right->g + right->h).push(right);
@@ -1451,6 +1864,10 @@ int main()
 				{
 					down->g = current->g + 1;
 					down->h = Manhattan(right->cur);
+					if (goal_state == 2)
+					{
+						down->h = Manhattan_2(down->cur);
+					}
 					if (down->g + down->h < 67)
 					{
 						a_misplaced.at(down->g + down->h).push(down);
@@ -1468,6 +1885,10 @@ int main()
 				{
 					left->g = current->g + 1;
 					left->h = Manhattan(left->cur);
+					if (goal_state == 2)
+					{
+						left->h = Manhattan_2(left->cur);
+					}
 					if (left->g + left->h < 67)
 					{
 						a_misplaced.at(left->g + left->h).push(left);
@@ -1483,6 +1904,10 @@ int main()
 				{
 					down->g = current->g + 1;
 					down->h = Manhattan(down->cur);
+					if (goal_state == 2)
+					{
+						down->h = Manhattan_2(down->cur);
+					}
 					if (down->g + down->h < 67)
 					{
 						a_misplaced.at(down->g + down->h).push(down);
@@ -1500,6 +1925,10 @@ int main()
 				{
 					up->g = current->g + 1;
 					up->h = Manhattan(up->cur);
+					if (goal_state == 2)
+					{
+						up->h = Manhattan_2(up->cur);
+					}
 					if (up->g + up->h < 67)
 					{
 						a_misplaced.at(up->g + up->h).push(up);
@@ -1515,6 +1944,10 @@ int main()
 				{
 					right->g = current->g + 1;
 					right->h = Manhattan(right->cur);
+					if (goal_state == 2)
+					{
+						right->h = Manhattan_2(right->cur);
+					}
 					if (right->g + right->h < 67)
 					{
 						a_misplaced.at(right->g + right->h).push(right);
@@ -1530,6 +1963,10 @@ int main()
 				{
 					down->g = current->g + 1;
 					down->h = Manhattan(down->cur);
+					if (goal_state == 2)
+					{
+						down->h = Manhattan_2(down->cur);
+					}
 					if (down->g + down->h < 67)
 					{
 						a_misplaced.at(down->g + down->h).push(down);
@@ -1547,6 +1984,10 @@ int main()
 				{
 					up->g = current->g + 1;
 					up->h = Manhattan(up->cur);
+					if (goal_state == 2)
+					{
+						up->h = Manhattan_2(up->cur);
+					}
 					if (up->g + up->h < 67)
 					{
 						a_misplaced.at(up->g + up->h).push(up);
@@ -1562,6 +2003,10 @@ int main()
 				{
 					right->g = current->g + 1;
 					right->h = Manhattan(right->cur);
+					if (goal_state == 2)
+					{
+						right->h = Manhattan_2(right->cur);
+					}
 					if (right->g + right->h < 67)
 					{
 						a_misplaced.at(right->g + right->h).push(right);
@@ -1577,6 +2022,10 @@ int main()
 				{
 					down->g = current->g + 1;
 					down->h = Manhattan(down->cur);
+					if (goal_state == 2)
+					{
+						down->h = Manhattan_2(down->cur);
+					}
 					if (down->g + down->h < 67)
 					{
 						a_misplaced.at(down->g + down->h).push(down);
@@ -1592,6 +2041,10 @@ int main()
 				{
 					left->g = current->g + 1;
 					left->h = Manhattan(left->cur);
+					if (goal_state == 2)
+					{
+						left->h = Manhattan_2(left->cur);
+					}
 					if (left->g + left->h < 67)
 					{
 						a_misplaced.at(left->g + left->h).push(left);
@@ -1609,6 +2062,10 @@ int main()
 				{
 					down->g = current->g + 1;
 					down->h = Manhattan(down->cur);
+					if (goal_state == 2)
+					{
+						down->h = Manhattan_2(down->cur);
+					}
 					if (down->g + down->h < 67)
 					{
 						a_misplaced.at(down->g + down->h).push(down);
@@ -1624,6 +2081,10 @@ int main()
 				{
 					up->g = current->g + 1;
 					up->h = Manhattan(up->cur);
+					if (goal_state == 2)
+					{
+						up->h = Manhattan_2(up->cur);
+					}
 					if (up->g + up->h < 67)
 					{
 						a_misplaced.at(up->g + up->h).push(up);
@@ -1639,6 +2100,10 @@ int main()
 				{
 					left->g = current->g + 11;
 					left->h = Manhattan(left->cur);
+					if (goal_state == 2)
+					{
+						left->h = Manhattan_2(left->cur);
+					}
 					if (left->g + left->h < 67)
 					{
 						a_misplaced.at(left->g + left->h).push(left);
@@ -1656,6 +2121,10 @@ int main()
 				{
 					up->g = current->g + 1;
 					up->h = Manhattan(up->cur);
+					if (goal_state == 2)
+					{
+						up->h = Manhattan_2(up->cur);
+					}
 					if (up->g + up->h < 67)
 					{
 						a_misplaced.at(up->g + up->h).push(up);
@@ -1671,6 +2140,10 @@ int main()
 				{
 					right->g = current->g + 1;
 					right->h = Manhattan(right->cur);
+					if (goal_state == 2)
+					{
+						right->h = Manhattan_2(right->cur);
+					}
 					if (right->g + right->h < 67)
 					{
 						a_misplaced.at(right->g + right->h).push(right);
@@ -1689,6 +2162,10 @@ int main()
 				{
 					up->g = current->g + 1;
 					up->h = Manhattan(up->cur);
+					if (goal_state == 2)
+					{
+						up->h = Manhattan_2(up->cur);
+					}
 					if (up->g + up->h < 67)
 					{
 						a_misplaced.at(up->g + up->h).push(up);
@@ -1704,6 +2181,10 @@ int main()
 				{
 					left->g = current->g + 1;
 					left->h = Manhattan(left->cur);
+					if (goal_state == 2)
+					{
+						left->h = Manhattan_2(left->cur);
+					}
 					if (left->g + left->h < 67)
 					{
 						a_misplaced.at(left->g + left->h).push(left);
@@ -1719,6 +2200,10 @@ int main()
 				{
 					right->g = current->g + 1;
 					right->h = Manhattan(right->cur);
+					if (goal_state == 2)
+					{
+						right->h = Manhattan_2(right->cur);
+					}
 					if (right->g + right->h < 67)
 					{
 						a_misplaced.at(right->g + right->h).push(right);
@@ -1736,6 +2221,10 @@ int main()
 				{
 					left->g = current->g + 1;
 					left->h = Manhattan(left->cur);
+					if (goal_state == 2)
+					{
+						left->h = Manhattan_2(left->cur);
+					}
 					if (left->g + left->h < 67)
 					{
 						a_misplaced.at(left->g + left->h).push(left);
@@ -1751,6 +2240,10 @@ int main()
 				{
 					up->g = current->g + 1;
 					up->h = Manhattan(up->cur);
+					if (goal_state == 2)
+					{
+						up->h = Manhattan_2(up->cur);
+					}
 					if (up->g + up->h < 67)
 					{
 						a_misplaced.at(up->g + up->h).push(up);
@@ -1808,6 +2301,7 @@ int main()
 		}
 
 		cout << "# of nodes traversed: " << traversed.size() << endl;
+		cout << "Max nodes in queue: " << max_q << endl;
 
 	}
 	//-------------------------A* with the Misplaced Tile Heuristic-------------------------//
